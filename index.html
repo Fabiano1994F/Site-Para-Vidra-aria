@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Vidraçaria | Vidros Temperados e Espelhos em São Paulo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<style>
+    /* Ajuste no menu ativo */
+    .nav-links a.active {
+        color: var(--primary-color) !important;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <h1>Max <span>Vidraçaria</span></h1>
+        </div>
+
+        <div class="menu-hamburger" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class=active>Início</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-container" id="home">
+            <div class="carousel" id="carousel">
+                <img src="img/001.jpeg" alt="Instalação de box" class="carousel-img">
+                <img src="img/002.jpeg" alt="Fachada comercial" class="carousel-img">
+                <img src="img/003.jpeg" alt="Espelho sala" class="carousel-img">
+            </div>
+
+            <!-- As inscrições ficam aqui, fora da div carousel mas dentro da hero-container -->
+            <div class="carousel-captions-wrapper">
+                <!-- Slide 0 -->
+                <div class="caption-item active" id="cap-0">
+                    <h3>Serviços de Qualidade</h3>
+                    <p>Segurança e elegância para sua casa.</p>
+                    <a href="services.html" class="btn-carousel">Nossos Serviços</a>
+                </div>
+
+                <!-- Slide 1 -->
+                <div class="caption-item" id="cap-1">
+                    <h3>Fachadas de Vidro</h3>
+                    <p>Sua empresa com visual moderno e profissional.</p>
+                    <a href="contato.html" class="btn-carousel">Solicitar Orçamento</a>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="caption-item" id="cap-2">
+                    <h3>Profissionais Especializados</h3>
+                    <p>Equipe experiente e qualificada para todos os seus projetos.</p>
+                    <a href="empresa.html" class="btn-carousel">Conheça nossa equipe</a>
+                </div>
+            </div>
+
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <i class="fas fa-door-open" style="font-size: 2rem; color: #00aaff;"></i>
+                        <h3>Vidros Temperados</h3>
+                        <p>Segurança e resistência para portas, janelas e fechamentos.</p>
+                    </article>
+                    <article class="service-card">
+                        <i class="fas fa-tools" style="font-size: 2rem; color: #00aaff;"></i>
+                        <h3>Manutenção</h3>
+                        <p>Substituição de vidros quebrados e regulagem de roldanas.</p>
+                    </article>
+                    <article class="service-card">
+                        <i class="fas fa-square" style="font-size: 2rem; color: #00aaff;"></i>
+                        <h3>Espelhos</h3>
+                        <p>Espelhos sob medida com acabamento lapidado ou bisotê.</p>
+                    </article>
+                    <article class="service-card">
+                        <i class="fas fa-bath" style="font-size: 2rem; color: #00aaff;"></i>
+                        <h3>Box para Banheiro</h3>
+                        <p>Variedade de cores e modelos para o seu banheiro.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Coluna 1: Marca e Resumo -->
+            <div class="footer-box">
+                <div class="logo">
+                    <h1>Max <span>Vidraçaria</span></h1>
+                </div>
+                <p>Soluções em vidros e espelhos com qualidade e segurança para sua obra ou residência.</p>
+
+                <div class="footer-social">
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Links Rápidos -->
+            <div class="footer-box">
+                <h3>Navegação</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="services.html">Serviços</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3: Contato e Localização -->
+            <div class="footer-box">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> São Paulo - SP</p>
+                <p><i class="fab fa-whatsapp"></i> (11) 0000-0000</p>
+                <p><i class="far fa-envelope"></i> contato@maxvidracaria.com.br</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Max Vidraçaria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

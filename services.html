@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Max Vidraçaria</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<style>
+    /* --- Novo CSS para o Grid de Imagens de Serviços --- */
+
+    .services-page {
+        padding: 80px 0;
+    }
+
+    .services-image-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 colunas iguais */
+        gap: 20px;
+        /* Espaço entre os cards */
+        padding: 0 20px;
+    }
+
+    .service-image-card {
+        position: relative;
+        /* Crucial para o figcaption sobrepor */
+        margin: 0;
+        overflow: hidden;
+        /* Garante que a legenda não saia do card */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .service-image-card:hover {
+        transform: translateY(-5px);
+        /* Efeito suave de hover */
+    }
+
+    .service-image-card img {
+        width: 100%;
+        height: 300px;
+        /* Altura fixa das imagens para alinhar o grid */
+        object-fit: cover;
+        /* Preenche sem distorcer */
+        display: block;
+        /* Remove espaços extras */
+    }
+
+    .service-image-card figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; 
+    color: #00aaff;
+    text-align: center;
+    
+    /* --- NOVAS REGRAS PARA PADRONIZAR --- */
+    min-height: 100px;        /* Altura mínima fixa para todas as faixas */
+    display: flex;            /* Ativa o Flexbox */
+    align-items: center;      /* Centraliza o texto verticalmente */
+    justify-content: center;   /* Centraliza o texto horizontalmente */
+    padding: 10px 15px;       /* Ajuste de respiro interno */
+    box-sizing: border-box;   /* Evita que o padding aumente o tamanho da faixa */
+    /* ------------------------------------ */
+
+    font-size: 1.3rem;        /* Reduzi levemente para caber melhor em 2 linhas */
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+    /* Responsividade: Celulares e Tablets */
+    @media (max-width: 992px) {
+        .services-image-grid {
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 colunas em tablets */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .services-image-grid {
+            grid-template-columns: 1fr;
+            /* 1 coluna em celulares */
+        }
+
+        .service-image-card img {
+            height: 250px;
+            /* Altura um pouco menor no celular */
+        }
+
+        .service-image-card figcaption {
+            font-size: 1.2rem;
+            /* Fonte um pouco menor no celular */
+        }
+    }
+
+    /* Estilo do cabeçalho da página */
+    .cabecalho-secao {
+        text-align: center;
+        padding: 40px 0;
+        background-color: #f8f9fa;
+        /* Um cinza bem claro para dar contraste */
+        margin-bottom: 30px;
+    }
+
+    .cabecalho-secao h1 {
+        font-size: 2.5rem;
+        color: #003366;
+        /* Azul da Max Vidraçaria */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0;
+    }
+
+    /* Linha azul/laranja embaixo do nome "Empresa" */
+    .linha-decorativa {
+        width: 50px;
+        height: 4px;
+        background-color: #00aaff;
+        /* Laranja de destaque */
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+
+    /* Ajuste no menu ativo */
+    .nav-links a.active {
+        color: var(--primary-color) !important;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <h1>Max <span>Vidraçaria</span></h1>
+        </div>
+
+         <div class="menu-hamburger" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="services.html" class=active>Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="pagina-empresa">
+        <div class="cabecalho-secao">
+            <h1>NOSSOS SERVIÇOS</h1>
+            <div class="linha-decorativa"></div>
+        </div>
+
+        <div class="container-principal">
+        </div>
+    </section>
+
+    <main class="services-page">
+        <section class="container">
+
+            <div class="services-image-grid">
+
+                <figure class="service-image-card">
+                    <a href="box.html" style="text-decoration: none; color: inherit; display: block;">
+                        <img src="img/Box.jpg" alt="Instalação de box de vidro">
+                        <figcaption>Box</figcaption>
+                    </a>
+                </figure>
+
+                <figure class="service-image-card">
+                    <a href="corrimao.html" style="text-decoration: none; color: inherit; display: block;">
+                        <img src="img/GuardaCorpo.jpg" alt="Guarda-corpo de vidro para sacada">
+                        <figcaption>Guarda-Corpo<br>e Corrimão</figcaption>
+                    </a>
+                </figure>
+
+                <figure class="service-image-card">
+                    <a href="janela.html" style="text-decoration: none; color: inherit; display: block;">
+                        <img src="img/Janela.jpg" alt="Janela de vidro moderna">
+                        <figcaption>Janela</figcaption>
+                    </a>
+                </figure>
+
+                <figure class="service-image-card">
+                    <a href="porta.html" style="text-decoration: none; color: inherit; display: block;">
+                        <img src="img/Portadevidro.jpg" alt="Porta de correr de vidro">
+                        <figcaption>Portas</figcaption>
+                    </a>
+                </figure>
+
+                <figure class="service-image-card">
+                    <a href="telhado.html" style="text-decoration: none; color: inherit; display: block;">
+                        <img src="img/Telhado.jpg" alt="Cobertura ou telhado de vidro">
+                        <figcaption>Telhado de Vidro</figcaption>
+                    </a>
+                </figure>
+
+                <figure class="service-image-card">
+                    <a href="espelho.html" style="text-decoration: none; color: inherit; display: block;">
+                        <img src="img/Espelho.jpg" alt="Espelho grande em sala de jantar">
+                        <figcaption>Espelhos</figcaption>
+                    </a>
+                </figure>
+
+                <figure class="service-image-card">
+                    <a href="fechamento.html" style="text-decoration: none; color: inherit; display: block;">
+                        <img src="img/Areadevidro.jpg" alt="Fechamento de sacada ou área com vidro">
+                        <figcaption>Fechamento<br>de Área</figcaption>
+                    </a>
+                </figure>
+
+                <figure class="service-image-card">
+                    <a href="pivolante.html" style="text-decoration: none; color: inherit; display: block;">
+                        <img src="img/Pivotante.jpg" alt="Porta pivotante de vidro">
+                        <figcaption>Pivotante</figcaption>
+                    </a>
+                </figure>
+
+            </div>
+        </section>
+    </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <!-- Coluna 1: Marca e Resumo -->
+        <div class="footer-box">
+            <div class="logo">
+                <h1>Max <span>Vidraçaria</span></h1>
+            </div>
+            <p>Soluções em vidros e espelhos com qualidade e segurança para sua obra ou residência.</p>
+
+             <div class="footer-social">
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+        </div>
+
+        <!-- Coluna 2: Links Rápidos -->
+        <div class="footer-box">
+            <h3>Navegação</h3>
+            <ul class="footer-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 3: Contato e Localização -->
+        <div class="footer-box">
+            <h3>Contato</h3>
+            <p><i class="fas fa-map-marker-alt"></i> São Paulo - SP</p>
+            <p><i class="fab fa-whatsapp"></i> (11) 0000-0000</p>
+            <p><i class="far fa-envelope"></i> contato@maxvidracaria.com.br</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Max Vidraçaria. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

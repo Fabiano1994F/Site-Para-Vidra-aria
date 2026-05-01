@@ -1,0 +1,500 @@
+:root {
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --secondary-color: #343a40;
+    --background-color: #f4f7f6;
+    --text-color: #212529;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    /* Alterado para cor clara para não bugar o visual */
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Evita barra de rolagem horizontal */
+}
+
+/* Header & Navegação */
+header {
+    background-color: #333;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+header h1 span {
+    color: #00aaff;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Classe para destacar o link da página atual */
+.nav-item.active {
+    color: #00aaff;
+    border-bottom: 2px solid #00aaff;
+    padding-bottom: 5px;
+
+}
+
+/* Hero Container - Onde fica o Slide */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    background-color: #000;
+    /* Fundo preto caso a imagem demore a carregar */
+}
+
+.carousel {
+    display: flex;
+    width: 300%;
+    /* 3 imagens = 300% */
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transição mais elegante */
+}
+
+.carousel img {
+    width: 33.333%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botões de Navegação */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 25px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+    transition: all 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+/* 1. Importação de Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap');
+
+/* 2. Container de Texto Centralizado */
+.carousel-captions-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    text-align: center;
+    z-index: 10;
+    /* Adicionado para garantir que o link interno se alinhe verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. Estilo dos Itens e Remoção da Box */
+.caption-item {
+    background: transparent !important;
+    border: none !important;
+    padding: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out; /* Suaviza a transição */
+}
+
+.caption-item.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 4. Estilo do Título e Subtítulo */
+.caption-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Tamanho responsivo */
+    color: #00aaff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+.caption-item p {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* 5. Botão Interativo (Clique aqui) */
+.btn-carousel {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #00aaff;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid #00aaff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-carousel:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-3px); /* Efeito de levante */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 6. Ajuste nas Setas (Opcional, para não sobrepor o texto central) */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.2); /* Fundo sutil nas setas */
+    border: none;
+}
+
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev { left: 0; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+/* Escondendo a Box de texto que estava na frente */
+.hero-text {
+    display: none;
+}
+
+/* Serviços */
+.services {
+    padding: 60px 5%;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.service-card {
+    padding: 40px;
+    background: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+/* Formulário de Contato */
+.contact {
+    padding: 80px 5%;
+    background-color: var(--background-color);
+}
+
+.contact-form {
+    max-width: 550px;
+    margin: 30px auto 0;
+    background: var(--white);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline-color: var(--primary-color);
+}
+
+.btn-enviar {
+    width: 100%;
+    background-color: #00aaff;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: #0e6591;
+}
+
+/* WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Footer */
+
+footer {
+    background-color: #1a1a1a;
+    /* Tom escuro para contraste */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-box h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-box h1 span {
+    color: #00aaff;
+    /* Azul para remeter a vidro/limpeza */
+}
+
+.footer-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-left: 3px solid #00aaff;
+    padding-left: 10px;
+}
+
+.footer-box p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00aaff;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    /* Deixa os ícones circulares */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.footer-social a:hover {
+    background-color: #00aaff;
+    transform: translateY(-3px);
+    /* Pequeno salto para dar vida ao layout */
+}
+
+/* Cor específica do Facebook se preferir */
+.footer-social a .fa-facebook-f:hover {
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .footer-box h3 {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+/* hamburger menu para mobile */
+
+/* Esconde o hambúrguer em telas de computador (Desktop) */
+.menu-hamburger {
+    display: none;
+}
+
+/* --- O seu código atual começa aqui --- */
+@media (max-width: 768px) {
+    .menu-hamburger {
+        display: block !important;
+        /* ... restante do seu código ... */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Garante que o ícone do hambúrguer seja visto */
+    .menu-hamburger {
+        display: block !important;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        z-index: 10001;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    /* Ajuste da lista de links */
+    .nav-links {
+        display: none;
+        /* Escondido por padrão */
+        flex-direction: column;
+        background-color: #ffffff;
+        /* Branco sólido */
+        position: absolute;
+        top: 60px;
+        /* Ajuste para ficar logo abaixo da logo */
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        list-style: none;
+        margin: 0;
+    }
+
+    /* A classe que o seu JS está ativando agora */
+    .nav-links.active {
+        display: flex !important;
+        /* Força a exibição quando clicado */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-links li a {
+        color: #003366;
+        text-decoration: none;
+        font-size: 1.2rem;
+        display: block;
+    }
+}
